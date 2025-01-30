@@ -9,15 +9,15 @@ import {
   Builder,
 } from "@builder.io/react";
 import "@builder.io/widgets";
-import { MyFooter } from "../components/footer";
-import { MyHeader } from "../components/header";
+import { MyFooter } from "../../components/footer";
+import { MyHeader } from "../../components/header";
 
-import "../components/icon-component";
-import "../components/code-block";
-import "../components/cards/product-card";
-import "../components/cards/blog-card";
-import "../components/cards/video-card";
-import "../components/cards/testimonial-card";
+import "../../components/icon-component";
+import "../../components/code-block";
+import "../../components/cards/product-card";
+import "../../components/cards/blog-card";
+import "../../components/cards/video-card";
+import "../../components/cards/testimonial-card";
 
 /*
   Initialize the Builder SDK with your organization's API Key
@@ -31,10 +31,11 @@ export async function getStaticProps({ params }) {
     The `userAttributes` field is used for targeting content,
     learn more here: https://www.builder.io/c/docs/targeting-with-builder
   */
+ if (!params?.page ) { params.page = "index"; }
   const page = await builder
     .get("page", {
       userAttributes: {
-        urlPath: "/" + (params?.page?.join("/") || ""),
+        urlPath: "/" + (params?.page ?? ""),
       },
     })
     .toPromise();
