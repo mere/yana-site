@@ -23,7 +23,7 @@ import "../components/cards/testimonial-card";
   Initialize the Builder SDK with your organization's API Key
   The API Key can be found on: https://builder.io/account/settings
 */
-builder.init("ccda6c7abf4c4b8195aa67d47de420dd");
+builder.init("b4af8c10d73644029e86cf3585c23542");
 
 export async function getStaticProps({ params }) {
   /*
